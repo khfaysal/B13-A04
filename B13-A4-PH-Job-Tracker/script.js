@@ -34,21 +34,28 @@ rejectedBtns.forEach((btn) => {
   });
 });
 
-// document
-//   .querySelectorAll(".btn-interview")
-//   .addEventListener("click", function () {
-//     const addInterview = document.querySelectorAll(".interviewCount");
-//     const currentValue = parseInt(addInterview.innerText) || 0;
+const btnAll = document.getElementById("btn-all");
+const btnAccept = document.getElementById("btn-accept");
+const btnReject = document.getElementById("btn-reject");
 
-//     addInterview.innerText = currentValue + 1;
-//   });
+function filterCards(status) {
+  const allCard = document.querySelectorAll("div.relative");
 
-// //Rej btn:
-// document
-//   .querySelectorAll(".btn-rejected")
-//   .addEventListener("click", function () {
-//     const addRejected = document.querySelectorAll(".rejectedCount");
-//     const currentValueR = parseInt(addRejected.innerText) || 0;
+  allCard.forEach((card) => {
+    const cardStatus = card.dataset.status || "none";
 
-//     addRejected.innerText = currentValueR + 1;
-//   });
+    if (status === "all") {
+      card.style.display = "block";
+    } else if (status === "interview" && cardStatus === "interview") {
+      card.style.display = "block";
+    } else if (status === "rejected" && cardStatus === "rejected") {
+      card.style.display = "block";
+    } else if (status !== "all") {
+      card.style.display = "none";
+    }
+  });
+}
+
+btnAll.addEventListener("click", () => filterCards("all"));
+btnAccept.addEventListener("click", () => filterCards("interview"));
+btnReject.addEventListener("click", () => filterCards("rejected"));

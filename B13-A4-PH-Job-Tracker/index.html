@@ -35,13 +35,35 @@
       </div>
     </nav>
     <!-- Three Buttons  -->
-    <section class="flex justify-left gap-1">
-      <button class="ml-11 px-5 py-2 rounded-full bg-gray-500 font-semibold text-white">All</button>
-      <button class="ml-3 px-5 py-2 rounded-full bg-green-500 font-semibold text-white">Accept</button>
-      <button class="ml-3 px-5 py-2 rounded-full bg-red-500 font-semibold text-white">Reject</button>
-
+    <section class="flex justify-between ml-5 mr-7 gap-1">
+      <div>
+        <button
+          id="btn-all"
+          class="ml-11 px-5 py-2 rounded-full bg-gray-500 font-semibold text-white"
+        >
+          All
+        </button>
+        <button
+          id="btn-accept"
+          class="ml-3 px-5 py-2 rounded-full bg-green-500 font-semibold text-white"
+        >
+          Accept
+        </button>
+        <button
+          id="btn-reject"
+          class="ml-3 px-5 py-2 rounded-full bg-red-500 font-semibold text-white"
+        >
+          Reject
+        </button>
+      </div>
+      <div>
+        <p class="text-center font-semibold"><span>0</span> of <span>8</span></p>
+      </div>
     </section>
-    <section class="p-10 flex justify center">
+    <!-- Three Buttons done -->
+
+    <!-- Card Started Here -->
+    <section class="p-10 flex justify center grid grid-cols-1 gap-6">
       <div
         class="relative w-full p-6 bg-white border borger-gray-200 rounded xl shadow-sm hover:shadow-md"
       >
